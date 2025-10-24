@@ -15,7 +15,7 @@ public class JuegoNavesEspaciales extends JFrame implements KeyListener, ActionL
     private final int ALTO_VENTANA = 600;
 
     private NaveEspacial nave;
-    private Enemigo enemigo;
+    private com.mx.curso.nave.Enemigo enemigo;
     private Moneda moneda;
     private JLabel infoPanel;
     private JPanel gamePanel;
@@ -39,7 +39,7 @@ public class JuegoNavesEspaciales extends JFrame implements KeyListener, ActionL
 
         // Crear instancias de los objetos
         nave = new NaveEspacial(ANCHO_VENTANA / 2 - 20, ALTO_VENTANA - 80);
-        enemigo = new Enemigo();
+        enemigo = new com.mx.curso.nave.Enemigo();
         moneda = new Moneda();
 
         gamePanel.add(nave);

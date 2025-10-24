@@ -1,3 +1,7 @@
+package org.example.caceria;
+
+import org.example.jugador.Jugador;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,12 +14,12 @@ import java.awt.event.KeyListener;
  */
 public class JuegoCaceriaManzanas extends JFrame implements KeyListener, ActionListener {
 
-    private final int VELOCIDAD = 15;
-    private Jugador jugador;
-    private Manzana manzana;
-    private JLabel infoPanel;
-    private JPanel gamePanel;
-    private Timer gameLoop;
+    private final int VELOCIDAD= 15;
+    private final Jugador jugador;
+    private final Manzana manzana;
+    private final JLabel infoPanel;
+    private final JPanel gamePanel;
+    private final Timer gameLoop;
 
     public JuegoCaceriaManzanas() {
         super("Cacería de Manzanas (Atributos y Métodos)");
@@ -37,11 +41,10 @@ public class JuegoCaceriaManzanas extends JFrame implements KeyListener, ActionL
         add(gamePanel, BorderLayout.CENTER);
 
         // 2. Creación de instancias (Objetos)
-        jugador = new Jugador(280, 200);
+        jugador = new Jugador();
         manzana = new Manzana();
 
-        gamePanel.add(jugador);
-        gamePanel.add(manzana);
+
 
         // 3. Inicializar y posicionar objetos
         manzana.reubicar(gamePanel);
@@ -55,6 +58,7 @@ public class JuegoCaceriaManzanas extends JFrame implements KeyListener, ActionL
         gameLoop.start();
 
         setVisible(true);
+        VELOCIDAD = 15;
     }
 
     private void actualizarUI() {
@@ -125,5 +129,11 @@ public class JuegoCaceriaManzanas extends JFrame implements KeyListener, ActionL
     // --- Método Main ---
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new JuegoCaceriaManzanas());
+    }
+
+    private class Manzana {
+        public void reubicar(JPanel gamePanel) {
+
+        }
     }
 }
